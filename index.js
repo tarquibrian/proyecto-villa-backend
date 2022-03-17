@@ -5,6 +5,7 @@ const { dbConnection } = require("./database/config");
 const multer = require("multer");
 const path = require("path");
 
+const UsuarioModel = require("./models/Usuario");
 // Crear el servidor de express
 const app = express();
 
@@ -41,6 +42,20 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
 app.use("/api/posts", require("./routes/posts"));
 app.use("/api/categories", require("./routes/categories"));
+app.use("/api/users", require("./routes/users"));
+app.get("api/usuarios", async (req, res) => {
+  UsuarioModel.find({}, (err, result) => {
+    if (err) {
+      res.send(err);
+    }
+    res.send(result);
+  });
+});
+app.delete("/api/users/:id",async (req, res) => {
+  const id = req.params._id;
+  await UsuarioModel.findByIdAndDelete(id).exec();
+  res.send('delete')
+})
 
 // Escuchar peticiones
 app.listen(process.env.PORT, () => {

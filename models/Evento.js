@@ -22,7 +22,6 @@ const EventoSchema = Schema({
         ref: 'Usuario',
         required: true
     }
-
 });
 
 EventoSchema.method('toJSON', function() {
