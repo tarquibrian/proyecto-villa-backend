@@ -51,11 +51,11 @@ app.get("api/usuarios", async (req, res) => {
     res.send(result);
   });
 });
-app.delete("/api/users/:id",async (req, res) => {
+app.delete("/api/users/:id", async (req, res) => {
   const id = req.params._id;
   await UsuarioModel.findByIdAndDelete(id).exec();
-  res.send('delete')
-})
+  res.send("delete");
+});
 
 // Escuchar peticiones
 app.listen(process.env.PORT, () => {
