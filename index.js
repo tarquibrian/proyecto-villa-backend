@@ -43,6 +43,10 @@ app.use("/api/events", require("./routes/events"));
 app.use("/api/posts", require("./routes/posts"));
 app.use("/api/categories", require("./routes/categories"));
 app.use("/api/users", require("./routes/users"));
+app.use("/api/sitios", require("./routes/sitios"));
+
+
+
 app.get("api/usuarios", async (req, res) => {
   UsuarioModel.find({}, (err, result) => {
     if (err) {
@@ -51,6 +55,7 @@ app.get("api/usuarios", async (req, res) => {
     res.send(result);
   });
 });
+
 app.delete("/api/users/:id", async (req, res) => {
   const id = req.params._id;
   await UsuarioModel.findByIdAndDelete(id).exec();
