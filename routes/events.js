@@ -13,6 +13,7 @@ const {
   crearEvento,
   actualizarEvento,
   eliminarEvento,
+  getEvent
 } = require("../controllers/events");
 
 const router = Router();
@@ -20,6 +21,7 @@ const router = Router();
 // Obtener eventos
 router.get("/", getEventos);
 // Todas tienes que pasar por la validación del JWT
+router.put("/", getEvent);
 router.use(validarJWT);
 // Crear un nuevo evento
 router.post(

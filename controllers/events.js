@@ -10,6 +10,24 @@ const getEventos = async (req, res = response) => {
   });
 };
 
+const getEvent = async (req, res = response) => {
+  const eventoStart = req.body.start;
+  const eventoEnd = req.body.end;
+  //console.log(eventoStart)
+  // const eventoEnd = req.params.date.end;
+  try {
+    const result = await Evento.find({
+      start: {
+        $gte: (eventoStart),
+        $lte: (eventoEnd)
+      },
+    });
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const crearEvento = async (req, res = response) => {
   const evento = new Evento(req.body);
 
@@ -29,7 +47,7 @@ const crearEvento = async (req, res = response) => {
       msg: "Hable con el administrador",
     });
   }
-};
+}; 
 
 const actualizarEvento = async (req, res = response) => {
   const eventoId = req.params.id;
@@ -114,4 +132,5 @@ module.exports = {
   crearEvento,
   actualizarEvento,
   eliminarEvento,
+  getEvent,
 };
