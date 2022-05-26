@@ -13,7 +13,7 @@ router.get("/key", (req, res) => {
 });
 
 router.post("/push", (req, res) => {
-  const hola = req.body.hola;
+  
   const notificacion = {
     titulo: req.body.titulo,
     cuerpo: req.body.cuerpo,
