@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon index.js --ignore 'Backend-2.0.0/*.json' ",
+    "start": "node index.js",
+    "generate-vapid": "./node_modules/web-push/src/cli.js generate-vapid-keys --json > vapid.json"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,8 @@
     "mongoose": "5.9.18",
     "multer": "1.4.4",
     "nodemon": "^2.0.15",
-    "path": "0.12.7"
+    "path": "0.12.7",
+    "urlsafe-base64": "^1.0.0",
+    "web-push": "3.3.3"
   }
 }

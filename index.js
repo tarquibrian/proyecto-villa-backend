@@ -4,6 +4,7 @@ const cors = require("cors");
 const { dbConnection } = require("./database/config");
 const multer = require("multer");
 const path = require("path");
+const webpush = require("web-push");
 
 const UsuarioModel = require("./models/Usuario");
 // Crear el servidor de express
@@ -14,6 +15,11 @@ dbConnection();
 
 // CORS
 app.use(cors());
+webpush.setVapidDetails(
+  "mailto: `tarquibrian@gmail.com`",
+  "BPbU7_Hb0ty5-1HqE2UYrqHrl1rDak6zvI1x_JqsqHUBv-rRpBvOQIZ52kPQu090IIfdRtQ--PLb-GP0fFRp9cI",
+  "yQTkqyWbkImhthrM1OimulENCOqzxqTo_3N6tMInOzc"
+);
 
 // Directorio Público
 app.use(express.static("public"));
@@ -45,7 +51,7 @@ app.use("/api/categories", require("./routes/categories"));
 app.use("/api/users", require("./routes/users"));
 app.use("/api/sitios", require("./routes/sitios"));
 
-
+app.use("/api/notification", require("./routes/pushNotification"));
 
 app.get("api/usuarios", async (req, res) => {
   UsuarioModel.find({}, (err, result) => {

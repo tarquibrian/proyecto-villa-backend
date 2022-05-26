@@ -24,6 +24,9 @@ const SitioSchema = Schema({
   lng: {
     type: Number,
     required: true,
+  },
+  counter: {
+    type: Number
   }
 });
 

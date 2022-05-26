@@ -20,11 +20,35 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.post("/contador", async (req, res) => {
+  try {
+    const sitioId = req.body.id;
+    await Sitio.updateOne({ _id: sitioId }, { $inc: { counter: 1 } }),
+      function (error, info) {
+        if (error) {
+          res.json({
+            resultado: false,
+            msg: "No se pudo modificar el contador",
+            err,
+          });
+        } else {
+          res.json({
+            resultado: true,
+            info: info,
+          });
+        }
+      };
+    res.status(200).json("Counter actualizado...");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.delete("/:id", async (req, res) => {
   try {
     const sitio = await Sitio.findById(req.params.id);
     await sitio.delete();
-    res.status(200).json("Post has been deleted...");
+    res.status(200).json("El sitio fue eliminado...");
   } catch (err) {
     res.status(500).json(err);
   }
