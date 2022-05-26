@@ -62,10 +62,15 @@ app.get("api/usuarios", async (req, res) => {
   });
 });
 
-app.delete("/api/users/:id", async (req, res) => {
-  const id = req.params._id;
-  await UsuarioModel.findByIdAndDelete(id).exec();
-  res.send("delete");
+app.delete("/api/usuarios/:id", async (req, res) => {
+  try {
+    const post = await UsuarioModel.findById(req.params.id);
+
+    await post.delete();
+    res.status(200).json("Post has been deleted...");
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // Escuchar peticiones
