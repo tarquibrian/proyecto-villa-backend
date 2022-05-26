@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js --ignore 'Backend-2.0.0/*.json' ",
-    "start": "node index.js",
-    "generate-vapid": "./node_modules/web-push/src/cli.js generate-vapid-keys --json > vapid.json"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +23,6 @@
     "nodemon": "^2.0.15",
     "path": "0.12.7",
     "urlsafe-base64": "^1.0.0",
-    "web-push": "3.5.0"
+    "web-push": "^3.3.3"
   }
 }

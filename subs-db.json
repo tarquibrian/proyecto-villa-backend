@@ -1,10 +1,1 @@
-[
-  {
-    "endpoint": "https://fcm.googleapis.com/fcm/send/cMiliyaoRXc:APA91bEeJ0PKVMtJklIr5EMxynmX0arSl4Y9MYD_DhlSwoosnkCHqjistyblL8JYHQnymNbGhALokkgsZKZ2lBoBVmTMulCjqeAVEPgejTE37yuZT6RH95fZhFIHDVdTAZh6AA6aCUYK",
-    "expirationTime": null,
-    "keys": {
-      "p256dh": "BGXmliScRalHo_00trjZW8CJoBuOtlyz1IZq2JDNXTBR2vLflFCs6DTVK7I6K4Fx816YZNH7bEhqynjxowv6ClM",
-      "auth": "h5lCmqQnSV5dmjjwZZJQ8g"
-    }
-  }
-]
+[{"endpoint":"https://fcm.googleapis.com/fcm/send/fhDLZkng0CA:APA91bGe66Mhh3TBJ3UPN_MVFTQQYu3t3ObZQzk2NGXzq52yU75u8YMsAJ_O20I7EY2b2E1L9CRJ1aUtIvYqk8vHLcTICtWAEvZRr18qPhBcSBysqzTU72rog--aLe-kyctt5mXQW2uG","expirationTime":null,"keys":{"p256dh":"BKC6NzCa32HYF71soozrXnr2JDpzjMdIgPaLG0UlANFfAEQMn5ph-9wCBB35pweRnaQPhQ9QO8hIHKeCo53u-zE","auth":"hfcswFOPdcHLrTLA15QyeQ"}},{"endpoint":"https://wns2-bl2p.notify.windows.com/w/?token=BQYAAAAcssoP%2fMkeG%2ffTeDj9Y8XHfGzJUjyKiocsDikRW5mESNcwIsXFRPAqn7eLsNNlM9LaEWcLy%2fIE5dz697uWpFBKnYlkmLA6%2bNApzHaHexbTiG51bG9w0%2b1LkecIM%2baJpPDIVbRM6undALZL1AL5gN6hdiu6EsRhCLUm7iJJnG1UGJKz3xgklvkSAnDAkkxvY65pUrEQ7QS%2b3b4AQhlA8xOusXIbq0V7tpC%2bDTBQMx7qwBlzCIZ709juwBmwISdc4Yy%2b7PjZQsoRl%2bAMQxtDSPcYIhQaMoTIDy3qyqV8NzZ%2b5gHvP801xUS6gd%2f5Gm6p4tg%3d","expirationTime":null,"keys":{"p256dh":"BDbeDfUtlWrPoq4bDKFYyYMTuq7aMfC64mZqHB2b5CVUiGV4ZJELXk6AEThr0jAMrzdRkWht_r2qU5TaMZ70b9g","auth":"nvKfT-HvFm--U7SvpeZ5AQ"}}]
