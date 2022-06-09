@@ -7,6 +7,7 @@ const path = require("path");
 const webpush = require("web-push");
 
 const UsuarioModel = require("./models/Usuario");
+
 // Crear el servidor de express
 const app = express();
 
@@ -72,8 +73,6 @@ app.delete("/api/usuarios/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
 
 // Escuchar peticiones
 app.listen(process.env.PORT, () => {
